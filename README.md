@@ -1,5 +1,16 @@
 # edit frame video test
 
+Requires ngrok. After cloning:
+
+```sh
+yarn
+# populate .env file with EF_CLIENT_ID, EF_API_TOKEN
+yarn start &
+yarn ngrok
+```
+
+## experience
+
 Here is a rough outline of what I did:
 
 1. Create editframe account

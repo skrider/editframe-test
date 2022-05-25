@@ -7,7 +7,7 @@
   "packageManager": "yarn@3.2.1",
   "scripts": {
     "ngrok": "ngrok http 3000",
-    "start": "echo index.ts | entr ts-node index.ts"
+    "start": "ts-node index.ts"
   },
   "dependencies": {
     "@editframe/editframe-js": "^2.2.3",
