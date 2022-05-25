@@ -35,6 +35,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["@editframe/editframe-js", "npm:2.2.3"],\
             ["@types/express", "npm:4.17.13"],\
+            ["dotenv", "npm:16.0.1"],\
             ["express", "npm:4.18.1"],\
             ["ts-node", "virtual:0edaeb399b89d002b6edb2b9c15d0f57cd3fe6cb8af6e3d7832148a64529a1f9e58197caeeeecb3d82527417589f70e7e22728670f26ccad2f3b338f12244fb2#npm:10.8.0"],\
             ["typescript", "patch:typescript@npm%3A4.7.2#~builtin<compat/typescript>::version=4.7.2&hash=7ad353"]\
@@ -705,6 +706,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["dotenv", [\
+        ["npm:16.0.1", {\
+          "packageLocation": "./.yarn/cache/dotenv-npm-16.0.1-d99e72bb95-f459ffce07.zip/node_modules/dotenv/",\
+          "packageDependencies": [\
+            ["dotenv", "npm:16.0.1"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["editframe-test", [\
         ["workspace:.", {\
           "packageLocation": "./",\
@@ -712,6 +722,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["editframe-test", "workspace:."],\
             ["@editframe/editframe-js", "npm:2.2.3"],\
             ["@types/express", "npm:4.17.13"],\
+            ["dotenv", "npm:16.0.1"],\
             ["express", "npm:4.18.1"],\
             ["ts-node", "virtual:0edaeb399b89d002b6edb2b9c15d0f57cd3fe6cb8af6e3d7832148a64529a1f9e58197caeeeecb3d82527417589f70e7e22728670f26ccad2f3b338f12244fb2#npm:10.8.0"],\
             ["typescript", "patch:typescript@npm%3A4.7.2#~builtin<compat/typescript>::version=4.7.2&hash=7ad353"]\
