@@ -1,6 +1,5 @@
 import express from "express"
 import { Editframe } from "@editframe/editframe-js";
-import fs from "fs"
 require("dotenv").config()
 import path from "path"
 
@@ -14,32 +13,37 @@ const editframe = new Editframe({
   token: process.env.EF_API_TOKEN!,
 });
 
-const baseVideo = fs.createReadStream("static/default.mp4")
-
-editframe.videos.new(
-  // options
-  {
-    // Hexadecimal color
-    backgroundColor: "#FFFFFF",
-
-    dimensions: {
-      // Height in pixels
-      height: 400,
-
-      // Width in pixels
-      width: 400,
-    },
-
-    // Duration in seconds
-    duration: 60,
-
-    // Arbitrary metadata for your convenience
-    metadata: {
-      myId: "1",
-    },
-  }
-  // path.join(__dirname, "static/default.mp4")
-  ).then(comp => comp.encode());
+(async () => {
+  const composition = await editframe.videos.new(
+    // options
+    {
+      // Hexadecimal color
+      backgroundColor: "#FFFFFF",
+  
+      dimensions: {
+        // Height in pixels
+        height: 400,
+  
+        // Width in pixels
+        width: 400,
+      },
+  
+      // Duration in seconds
+      duration: 60,
+  
+      // Arbitrary metadata for your convenience
+      metadata: {
+        myId: "1",
+      },
+    }
+    // path.join(__dirname, "static/default.mp4")
+    )
+    await composition.addHtml({
+      url: "https://docs.editframe.com",
+      withTransparentBackground: false,
+    })
+    await composition.encode()
+})()
   
 app.use('/status', async (req, res) => {
   return res.send("up")
@@ -47,6 +51,7 @@ app.use('/status', async (req, res) => {
 
 app.use('/webhook', async (req, res) => {
   console.log(req.body)
+  return res.send()
 })
 
 /*
